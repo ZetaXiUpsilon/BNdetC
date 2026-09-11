@@ -1,0 +1,20 @@
+Research Log
+July 2
+
+
+Professor suggested:
+
+- complete/partialparallelization
+
+- verification timing
+
+- premature termination
+
+
+Questions:
+
+1. Should verification be adaptive?
+
+2. Can different branches verify at different frequencies?
+
+3. Can verification itself be parallel?

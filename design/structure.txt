@@ -1,0 +1,76 @@
+1. VERIFY every GUESS
+
+         GUESS
+           |
+     /-----------\
+ Branch A     Branch B
+     |           |
+  VERIFY       VERIFY
+ F/    \T     F/    \T
+kill alive   kill alive
+       |            |
+     GUESS        GUESS
+       |            |
+      ...          ...
+
+
+(after all GUESSes)
+      ...
+       |
+    VERIFY 
+   F/    \T
+  kill alive
+         |
+        STOP
+
+
+2. VERIFY every k GUESSes
+
+                 GUESS 1
+                    |
+                 GUESS 2
+                    |
+                   ...
+                    |
+                 GUESS k (k << n)
+                    |
+     +------------+-+------------------+
+     |            |                    |
+ Branch 1     Branch 2            Branch 2^k
+     |            |                    |
+  VERIFY       VERIFY               VERIFY
+ F/    \T     F/    \T             F/    \T
+kill alive   kill alive    ...    kill alive
+       |            |                    |
+      ...          ...                  ...
+
+
+(after all GUESSes)
+      ...
+       |
+    VERIFY 
+   F/    \T
+  kill alive
+         |
+        STOP
+
+
+3. VERIFY only at leaf
+
+                 GUESS 1
+                    |
+                 GUESS 2
+                    |
+                   ...
+                    |
+                 GUESS n
+                    |
+     +------------+-+------------------+
+     |            |                    |
+ Branch 1     Branch 2            Branch 2^n
+     |            |                    |
+  VERIFY       VERIFY               VERIFY
+ F/    \T     F/    \T             F/    \T
+kill alive   kill alive    ...    kill alive
+       |            |                    |
+      STOP         STOP                 STOP
